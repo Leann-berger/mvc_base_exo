@@ -10,7 +10,13 @@ $path = isset($url['path']) ? $url['path'] : '/';
 use App\Controller\HomeController;
 
 //instancier un objet HomeController
-$homeController = new HomeController();
+$homeController = new HomeController([
+        ["titre"=>"Le petit Prince","auteur"=>"Antoine de st-Exuperie", "genre" =>"conte"],
+       
+        ["titre"=>"Le Hobbit","auteur"=>"J.R.R Tolkien", "genre" =>"Fantasy"],
+        
+        ["titre"=>"l'îles au trésor","auteur"=>"Robert Louis Stevenson", "genre" =>"Aventure"]
+        ]);
 
 switch ($path) {
     //route racine
@@ -30,6 +36,7 @@ switch ($path) {
         $homeController->commande();
         break;
     //autre route non définie -> erreur 404
+
     default:
         echo "erreur 404";
         break;
