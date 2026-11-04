@@ -73,4 +73,12 @@ class HomeController
     {
         return include __DIR__ . "/../../template/template_" . $template . ".php";
     }
+    
+    public function commande() : mixed
+    {
+        return $this->render("commande", "Devis de commande", $data ?? []);
+    }
 }
+
+
+

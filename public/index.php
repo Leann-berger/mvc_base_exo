@@ -26,6 +26,9 @@ switch ($path) {
     case '/catalogue':
         $homeController->catalogue();
         break;
+    case '/commande':
+        $homeController->commande();
+        break;
     //autre route non définie -> erreur 404
     default:
         echo "erreur 404";
